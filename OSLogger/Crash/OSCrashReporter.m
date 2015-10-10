@@ -5,18 +5,21 @@
 //  Created by Veripark (SYLMZ) on 7/2/14.
 //
 //
-#define unsuccessfullDataPath @"unsuccessfullData.plist"
 #define crashReportFile @"crash.plist"
+#define listTitle @"List"
+#define serviceURL @"http://osmansoylemez.com"
+#define maxLogCount 10
 
-#import "CrashReporter.h"
+#import "OSCrashReporter.h"
 #import <CrashReporter/CrashReporter.h>
 #import "AsyncRequest.h"
-#import "NSString+Crypto.h"
+#import "NSDictionary+util.h"
+#import "NSString+util.h"
+#import "OSGlobals.h"
 
-@implementation CrashReporter
+@implementation OSCrashReporter
 
 // kaydetme işlemi cihazın üzerine olduğu için kullanılan fonksiyonla
-
 
 + (BOOL) controlObject:(NSString *)path toWriteArray:(NSMutableArray *) array{
     for (int i = 0 ; i < array.count; i++) {
@@ -54,7 +57,7 @@
     
     NSString *filePath = [formatter stringFromDate:report.systemInfo.timestamp];
     
-    NSString *path = [[GeneralMethods getCacheFileDirectoryPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.crash",filePath]];
+    NSString *path = [[OSGlobals getCacheFileDirectoryPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.crash",filePath]];
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:report.exceptionInfo.exceptionName forKeyPath:@"exceptionName"];
@@ -62,7 +65,7 @@
     [dict setValue:path forKeyPath:@"path"];
     
     [reportSTR writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    [CrashReporter sendCrashReportFilePath:dict];
+    [OSCrashReporter sendCrashReportFilePath:dict];
     
     [crashReporter purgePendingCrashReport];
     return;
@@ -73,25 +76,25 @@
     NSMutableDictionary *exceptionMessage = [NSMutableDictionary dictionaryWithDictionary:body];
     [exceptionMessage setValue:[[NSString alloc] initWithContentsOfFile:[body objectForKey:@"path"] encoding:NSUTF8StringEncoding error:nil] forKey:@"staketrace"];
     
-    NSMutableDictionary *crashReport = [GeneralMethods getDefaultLogDictionary];
-    [crashReport setValue:[GeneralMethods convertDictionaryToJSONString:exceptionMessage] forKey:@"ExceptionMessage"];
+    NSMutableDictionary *crashReport = [NSMutableDictionary dictionary];
+    [crashReport setValue:[exceptionMessage JSONString] forKey:@"ExceptionMessage"];
 
     
     NSDictionary *logDictionary = [NSDictionary dictionaryWithObject:[NSArray arrayWithObjects:crashReport, nil] forKey:listTitle];
-    NSString *logJSON = [GeneralMethods convertDictionaryToJSONString:logDictionary];
+    NSString *logJSON = [logDictionary JSONString];
     NSLog(@"%@",logJSON);
     AsyncRequest *req = [[AsyncRequest alloc] init];
     NSString *responseString = [req sendJSONPostRequest:[NSString stringWithFormat:@"%@logging/MobileLoggingTransaction",serviceURL] body:logJSON];
     NSLog(@"responseString %@",responseString);
-    NSDictionary *responseDict = [GeneralMethods convertStringToDictionary:responseString];
+    NSDictionary *responseDict = [responseString dictionary];
     if (![[responseDict objectForKey:@"isSuccess"] boolValue]) {
-        NSString *path = [[GeneralMethods getCacheFileDirectoryPath] stringByAppendingPathComponent:crashReportFile];
-        NSMutableDictionary *dictionary = [GeneralMethods getDictionaryFromPlist:path];
+        NSString *path = [[OSGlobals getCacheFileDirectoryPath] stringByAppendingPathComponent:crashReportFile];
+        NSMutableDictionary *dictionary = [OSGlobals getDictionaryFromPlist:path];
         NSMutableArray *array = [dictionary objectForKey:listTitle];
         if (array == nil) {
             array = [[NSMutableArray alloc] init];
         }
-        if ([CrashReporter controlObject:[body objectForKey:@"path"] toWriteArray:array]) {
+        if ([OSCrashReporter controlObject:[body objectForKey:@"path"] toWriteArray:array]) {
             [array addObject:body];
             [dictionary setValue:array forKey:listTitle];
             [dictionary writeToFile:path atomically:YES];
@@ -99,58 +102,34 @@
     }
 }
 
-+ (void) pushData{
-    NSString *path = [[GeneralMethods getCacheFileDirectoryPath] stringByAppendingPathComponent:crashReportFile];
-    NSMutableDictionary *dictionary = [GeneralMethods getDictionaryFromPlist:path];
-    NSMutableArray *array = [dictionary objectForKey:@"dataList"];
-    if (array == nil) {
-        array = [[NSMutableArray alloc] init];
-    }
-    
-    for (int i = 0; i < array.count; i++) {
-        NSLog(@"%@",[array objectAtIndex:i]);
-        
-        NSString *filePath = [[array objectAtIndex:i] objectForKey:@"path"];
-        NSFileManager *fileManager = [[NSFileManager alloc] init];
-        if ([fileManager fileExistsAtPath:filePath]) {
-            NSFileManager *man = [NSFileManager defaultManager];
-            NSDictionary *attrs = [man attributesOfItemAtPath:filePath error: NULL];
-            UInt32 result = [attrs fileSize];
-            NSLog(@"dosya %@ boyutu %i",filePath,(int)result);
-        }else{
-            NSLog(@"dosya yok");
-        }
-    }
-}
-
 + (void) pushLogString{
-    NSString *path = [GeneralMethods getLogFilePath];
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithDictionary:[GeneralMethods getDictionaryFromPlist:path]];
+    NSString *path = [OSGlobals getLogFilePath];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithDictionary:[OSGlobals getDictionaryFromPlist:path]];
     NSMutableArray *eventList = [[NSMutableArray alloc] initWithArray:[dictionary objectForKey:listTitle]];
     
     if (eventList.count > 0) {
-        int maxIndex = 10;
+        int maxIndex = maxLogCount;
         if (maxIndex > eventList.count) {
-            maxIndex = eventList.count;
+            maxIndex = (int)eventList.count;
         }
         
         NSMutableArray *postArray = [NSMutableArray new];
         for (int i = 0; i < maxIndex; i++) {
-            NSString *jsonString = [[eventList objectAtIndex:i] decodeBase64String];
-            NSDictionary *dict = [GeneralMethods convertStringToDictionary:jsonString];
+            NSString *jsonString = [eventList objectAtIndex:i];
+            NSDictionary *dict = [jsonString dictionary];
             [postArray addObject:dict];
         }
         
         NSDictionary *logDictionary = [NSDictionary dictionaryWithObject:postArray forKey:listTitle];
-        NSString *logJSON = [GeneralMethods convertDictionaryToJSONString:logDictionary];
+        NSString *logJSON = [logDictionary JSONString];
         AsyncRequest *req = [[AsyncRequest alloc] init];
         NSString *responseString = [req sendJSONPostRequest:[NSString stringWithFormat:@"%@logging/MobileLoggingTransaction",serviceURL] body:logJSON];
         NSLog(@"responseString %@",responseString);
-        NSDictionary *responseDict = [GeneralMethods convertStringToDictionary:responseString];
+        NSDictionary *responseDict = [responseString dictionary];
         if ([[responseDict objectForKey:@"isSuccess"] boolValue]) {
             
             if (maxIndex < eventList.count) {
-                [CrashReporter performSelector:@selector(pushLogString) withObject:nil afterDelay:4.0];
+                [OSCrashReporter performSelector:@selector(pushLogString) withObject:nil afterDelay:4.0];
             }
             
             for (int i = 0; i < maxIndex; i++) {

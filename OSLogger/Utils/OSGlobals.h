@@ -10,4 +10,8 @@
 
 @interface OSGlobals : NSObject
 
++ (NSString *) getCacheFileDirectoryPath;
++ (NSMutableDictionary *) getDictionaryFromPlist:(NSString *) filePath;
++ (NSString *) getLogFilePath;
+
 @end

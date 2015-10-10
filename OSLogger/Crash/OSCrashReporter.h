@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CrashReporter : NSObject
+@interface OSCrashReporter : NSObject
 
 + (BOOL) controlObject:(NSString *)body toWriteArray:(NSMutableArray *) array;
-+ (void) pushData;
 + (void) handleCrashReport;
 + (void) pushLogString;
 
