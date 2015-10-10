@@ -6,14 +6,50 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E3C346DF1A6711CD0027C7AF /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E3C346E01A6711CD0027C7AF /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+				E3C346E51A67120B0027C7AF /* ShellScript */,
+			);
+			dependencies = (
+				E3C346E41A6711DB0027C7AF /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productName = Framework;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		E3C346BF1A66F4470027C7AF /* OSLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C346BE1A66F4470027C7AF /* OSLogger.h */; };
 		E3C346C11A66F4470027C7AF /* OSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C346C01A66F4470027C7AF /* OSLogger.m */; };
-		E3C346C71A66F4470027C7AF /* libOSLogger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C346BB1A66F4470027C7AF /* libOSLogger.a */; };
+		E3C346DD1A670D3B0027C7AF /* OSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C346BE1A66F4470027C7AF /* OSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3C346F41A6716B80027C7AF /* OSCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C346EF1A6716B80027C7AF /* OSCrypto.h */; };
+		E3C346F51A6716B80027C7AF /* OSCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C346F01A6716B80027C7AF /* OSCrypto.m */; };
+		E3C346F61A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C346F11A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.h */; };
+		E3C346F71A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C346F21A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.m */; };
+		E3C346FB1A6717260027C7AF /* AsyncRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C346F91A6717260027C7AF /* AsyncRequest.h */; };
+		E3C346FC1A6717260027C7AF /* AsyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C346FA1A6717260027C7AF /* AsyncRequest.m */; };
+		E3C346FF1A67172E0027C7AF /* OSCrashReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C346FD1A67172E0027C7AF /* OSCrashReporter.h */; };
+		E3C347001A67172E0027C7AF /* OSCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C346FE1A67172E0027C7AF /* OSCrashReporter.m */; };
+		E3C347031A6717510027C7AF /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C347011A6717510027C7AF /* Reachability.h */; };
+		E3C347041A6717510027C7AF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C347021A6717510027C7AF /* Reachability.m */; };
+		E3C347071A6717590027C7AF /* NSData+util.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C347051A6717590027C7AF /* NSData+util.h */; };
+		E3C347081A6717590027C7AF /* NSData+util.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C347061A6717590027C7AF /* NSData+util.m */; };
+		E3FFF7AC1A671943002C96AB /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FFF7AB1A671943002C96AB /* CrashReporter.framework */; };
+		E3FFF7AF1A671A6F002C96AB /* NSDictionary+util.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FFF7AD1A671A6F002C96AB /* NSDictionary+util.h */; };
+		E3FFF7B01A671A6F002C96AB /* NSDictionary+util.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FFF7AE1A671A6F002C96AB /* NSDictionary+util.m */; };
+		E3FFF7B31A671A97002C96AB /* NSString+util.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FFF7B11A671A97002C96AB /* NSString+util.h */; };
+		E3FFF7B41A671A97002C96AB /* NSString+util.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FFF7B21A671A97002C96AB /* NSString+util.m */; };
+		E3FFF7B71A671C51002C96AB /* OSGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FFF7B51A671C51002C96AB /* OSGlobals.h */; };
+		E3FFF7B81A671C51002C96AB /* OSGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FFF7B61A671C51002C96AB /* OSGlobals.m */; };
+		E3FFF7BB1A672220002C96AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FFF7BA1A672220002C96AB /* UIKit.framework */; };
+		E3FFF7BD1A672226002C96AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FFF7BC1A672226002C96AB /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E3C346C81A66F4470027C7AF /* PBXContainerItemProxy */ = {
+		E3C346E31A6711DB0027C7AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E3C346B31A66F4470027C7AF /* Project object */;
 			proxyType = 1;
@@ -39,8 +75,28 @@
 		E3C346BB1A66F4470027C7AF /* libOSLogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOSLogger.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C346BE1A66F4470027C7AF /* OSLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSLogger.h; sourceTree = "<group>"; };
 		E3C346C01A66F4470027C7AF /* OSLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSLogger.m; sourceTree = "<group>"; };
-		E3C346C61A66F4470027C7AF /* OSLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C346CC1A66F4470027C7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3C346EF1A6716B80027C7AF /* OSCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCrypto.h; sourceTree = "<group>"; };
+		E3C346F01A6716B80027C7AF /* OSCrypto.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = OSCrypto.m; sourceTree = "<group>"; };
+		E3C346F11A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MPSecureUserDefaults.h"; sourceTree = "<group>"; };
+		E3C346F21A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = "NSUserDefaults+MPSecureUserDefaults.m"; sourceTree = "<group>"; };
+		E3C346F91A6717260027C7AF /* AsyncRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncRequest.h; sourceTree = "<group>"; };
+		E3C346FA1A6717260027C7AF /* AsyncRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncRequest.m; sourceTree = "<group>"; };
+		E3C346FD1A67172E0027C7AF /* OSCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCrashReporter.h; sourceTree = "<group>"; };
+		E3C346FE1A67172E0027C7AF /* OSCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCrashReporter.m; sourceTree = "<group>"; };
+		E3C347011A6717510027C7AF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E3C347021A6717510027C7AF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E3C347051A6717590027C7AF /* NSData+util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+util.h"; sourceTree = "<group>"; };
+		E3C347061A6717590027C7AF /* NSData+util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+util.m"; sourceTree = "<group>"; };
+		E3FFF7AB1A671943002C96AB /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = OSLogger/CrashReporter.framework; sourceTree = "<group>"; };
+		E3FFF7AD1A671A6F002C96AB /* NSDictionary+util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+util.h"; sourceTree = "<group>"; };
+		E3FFF7AE1A671A6F002C96AB /* NSDictionary+util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+util.m"; sourceTree = "<group>"; };
+		E3FFF7B11A671A97002C96AB /* NSString+util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+util.h"; sourceTree = "<group>"; };
+		E3FFF7B21A671A97002C96AB /* NSString+util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+util.m"; sourceTree = "<group>"; };
+		E3FFF7B51A671C51002C96AB /* OSGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSGlobals.h; sourceTree = "<group>"; };
+		E3FFF7B61A671C51002C96AB /* OSGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSGlobals.m; sourceTree = "<group>"; };
+		E3FFF7BA1A672220002C96AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E3FFF7BC1A672226002C96AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,14 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E3C346C31A66F4470027C7AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E3C346C71A66F4470027C7AF /* libOSLogger.a in Frameworks */,
+				E3FFF7BD1A672226002C96AB /* Foundation.framework in Frameworks */,
+				E3FFF7BB1A672220002C96AB /* UIKit.framework in Frameworks */,
+				E3FFF7AC1A671943002C96AB /* CrashReporter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +116,9 @@
 		E3C346B21A66F4470027C7AF = {
 			isa = PBXGroup;
 			children = (
+				E3FFF7BC1A672226002C96AB /* Foundation.framework */,
+				E3FFF7BA1A672220002C96AB /* UIKit.framework */,
+				E3FFF7AB1A671943002C96AB /* CrashReporter.framework */,
 				E3C346BD1A66F4470027C7AF /* OSLogger */,
 				E3C346CA1A66F4470027C7AF /* OSLoggerTests */,
 				E3C346BC1A66F4470027C7AF /* Products */,
@@ -75,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				E3C346BB1A66F4470027C7AF /* libOSLogger.a */,
-				E3C346C61A66F4470027C7AF /* OSLoggerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +136,9 @@
 		E3C346BD1A66F4470027C7AF /* OSLogger */ = {
 			isa = PBXGroup;
 			children = (
+				E3C346F81A6717120027C7AF /* Crash */,
+				E3C346EE1A6716B70027C7AF /* Utils */,
+				E3C346F31A6716B80027C7AF /* HTTPRequest */,
 				E3C346BE1A66F4470027C7AF /* OSLogger.h */,
 				E3C346C01A66F4470027C7AF /* OSLogger.m */,
 			);
@@ -105,7 +161,66 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E3C346EE1A6716B70027C7AF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E3C347011A6717510027C7AF /* Reachability.h */,
+				E3C347021A6717510027C7AF /* Reachability.m */,
+				E3C346EF1A6716B80027C7AF /* OSCrypto.h */,
+				E3C346F01A6716B80027C7AF /* OSCrypto.m */,
+				E3C346F11A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.h */,
+				E3C346F21A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.m */,
+				E3C347051A6717590027C7AF /* NSData+util.h */,
+				E3C347061A6717590027C7AF /* NSData+util.m */,
+				E3FFF7AD1A671A6F002C96AB /* NSDictionary+util.h */,
+				E3FFF7AE1A671A6F002C96AB /* NSDictionary+util.m */,
+				E3FFF7B11A671A97002C96AB /* NSString+util.h */,
+				E3FFF7B21A671A97002C96AB /* NSString+util.m */,
+				E3FFF7B51A671C51002C96AB /* OSGlobals.h */,
+				E3FFF7B61A671C51002C96AB /* OSGlobals.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E3C346F31A6716B80027C7AF /* HTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E3C346F91A6717260027C7AF /* AsyncRequest.h */,
+				E3C346FA1A6717260027C7AF /* AsyncRequest.m */,
+			);
+			path = HTTPRequest;
+			sourceTree = "<group>";
+		};
+		E3C346F81A6717120027C7AF /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				E3C346FD1A67172E0027C7AF /* OSCrashReporter.h */,
+				E3C346FE1A67172E0027C7AF /* OSCrashReporter.m */,
+			);
+			path = Crash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E3C346DC1A670D040027C7AF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C346DD1A670D3B0027C7AF /* OSLogger.h in Headers */,
+				E3FFF7AF1A671A6F002C96AB /* NSDictionary+util.h in Headers */,
+				E3C346FF1A67172E0027C7AF /* OSCrashReporter.h in Headers */,
+				E3C346F61A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.h in Headers */,
+				E3FFF7B31A671A97002C96AB /* NSString+util.h in Headers */,
+				E3C347031A6717510027C7AF /* Reachability.h in Headers */,
+				E3C346F41A6716B80027C7AF /* OSCrypto.h in Headers */,
+				E3FFF7B71A671C51002C96AB /* OSGlobals.h in Headers */,
+				E3C347071A6717590027C7AF /* NSData+util.h in Headers */,
+				E3C346FB1A6717260027C7AF /* AsyncRequest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		E3C346BA1A66F4470027C7AF /* OSLogger */ = {
@@ -115,6 +230,8 @@
 				E3C346B71A66F4470027C7AF /* Sources */,
 				E3C346B81A66F4470027C7AF /* Frameworks */,
 				E3C346B91A66F4470027C7AF /* CopyFiles */,
+				E3C346DC1A670D040027C7AF /* Headers */,
+				E3C346DE1A670EEB0027C7AF /* Build Framework */,
 			);
 			buildRules = (
 			);
@@ -124,24 +241,6 @@
 			productName = OSLogger;
 			productReference = E3C346BB1A66F4470027C7AF /* libOSLogger.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		E3C346C51A66F4470027C7AF /* OSLoggerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E3C346D21A66F4470027C7AF /* Build configuration list for PBXNativeTarget "OSLoggerTests" */;
-			buildPhases = (
-				E3C346C21A66F4470027C7AF /* Sources */,
-				E3C346C31A66F4470027C7AF /* Frameworks */,
-				E3C346C41A66F4470027C7AF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E3C346C91A66F4470027C7AF /* PBXTargetDependency */,
-			);
-			name = OSLoggerTests;
-			productName = OSLoggerTests;
-			productReference = E3C346C61A66F4470027C7AF /* OSLoggerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -155,7 +254,7 @@
 					E3C346BA1A66F4470027C7AF = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
-					E3C346C51A66F4470027C7AF = {
+					E3C346DF1A6711CD0027C7AF = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
@@ -173,44 +272,66 @@
 			projectRoot = "";
 			targets = (
 				E3C346BA1A66F4470027C7AF /* OSLogger */,
-				E3C346C51A66F4470027C7AF /* OSLoggerTests */,
+				E3C346DF1A6711CD0027C7AF /* Framework */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		E3C346C41A66F4470027C7AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* Begin PBXShellScriptBuildPhase section */
+		E3C346DE1A670EEB0027C7AF /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport FRAMEWORK_LOCN=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework\"\n\n# Create the path to the real Headers die\nmkdir -p \"${FRAMEWORK_LOCN}/Versions/A/Headers\"\n\n# Create the required symlinks\n/bin/ln -sfh A \"${FRAMEWORK_LOCN}/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${FRAMEWORK_LOCN}/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \\\n\"${FRAMEWORK_LOCN}/${PRODUCT_NAME}\"\n\n# Copy the public headers into the framework\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \\\n\"${FRAMEWORK_LOCN}/Versions/A/Headers\"\n";
 		};
-/* End PBXResourcesBuildPhase section */
+		E3C346E51A67120B0027C7AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\n# If we're already inside this script then die\nif [ -n \"$RW_MULTIPLATFORM_BUILD_IN_PROGRESS\" ]; then\nexit 0\nfi\nexport RW_MULTIPLATFORM_BUILD_IN_PROGRESS=1\n\nRW_FRAMEWORK_NAME=${PROJECT_NAME}\nRW_INPUT_STATIC_LIB=\"lib${PROJECT_NAME}.a\"\nRW_FRAMEWORK_LOCATION=\"${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework\"\n\nfunction build_static_library {\n    # Will rebuild the static library as specified\n    #     build_static_library sdk\n    xcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" \\\n    -target \"${TARGET_NAME}\" \\\n    -configuration \"${CONFIGURATION}\" \\\n    -sdk \"${1}\" \\\n    ONLY_ACTIVE_ARCH=NO \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    OBJROOT=\"${OBJROOT}\" \\\n    BUILD_ROOT=\"${BUILD_ROOT}\" \\\n    SYMROOT=\"${SYMROOT}\" $ACTION\n}\n\nfunction make_fat_library {\n    # Will smash 2 static libs together\n    #     make_fat_library in1 in2 out\n    xcrun lipo -create \"${1}\" \"${2}\" -output \"${3}\"\n}\n\n# 1 - Extract the platform (iphoneos/iphonesimulator) from the SDK name\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]; then\nRW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# 2 - Extract the version from the SDK\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]; then\nRW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# 3 - Determine the other platform\nif [ \"$RW_SDK_PLATFORM\" == \"iphoneos\" ]; then\nRW_OTHER_PLATFORM=iphonesimulator\nelse\nRW_OTHER_PLATFORM=iphoneos\nfi\n\n# 4 - Find the build directory\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$RW_SDK_PLATFORM$ ]]; then\nRW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${RW_OTHER_PLATFORM}\"\nelse\necho \"Could not find other platform build directory.\"\nexit 1\nfi\n\n# Build the other platform.\nbuild_static_library \"${RW_OTHER_PLATFORM}${RW_SDK_VERSION}\"\n\n# If we're currently building for iphonesimulator, then need to rebuild\n#   to ensure that we get both i386 and x86_64\nif [ \"$RW_SDK_PLATFORM\" == \"iphonesimulator\" ]; then\nbuild_static_library \"${SDK_NAME}\"\nfi\n\n# Join the 2 static libs into 1 and push into the .framework\nmake_fat_library \"${BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n# Ensure that the framework is present in both platform's build directories\ncp -a \"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n# Copy the framework to the user's desktop\nditto \"${RW_FRAMEWORK_LOCATION}\" \"${HOME}/Desktop/${RW_FRAMEWORK_NAME}.framework\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3C346B71A66F4470027C7AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C346FC1A6717260027C7AF /* AsyncRequest.m in Sources */,
+				E3C347001A67172E0027C7AF /* OSCrashReporter.m in Sources */,
+				E3FFF7B81A671C51002C96AB /* OSGlobals.m in Sources */,
 				E3C346C11A66F4470027C7AF /* OSLogger.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E3C346C21A66F4470027C7AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E3C346F51A6716B80027C7AF /* OSCrypto.m in Sources */,
+				E3FFF7B41A671A97002C96AB /* NSString+util.m in Sources */,
+				E3C347041A6717510027C7AF /* Reachability.m in Sources */,
+				E3C346F71A6716B80027C7AF /* NSUserDefaults+MPSecureUserDefaults.m in Sources */,
+				E3FFF7B01A671A6F002C96AB /* NSDictionary+util.m in Sources */,
+				E3C347081A6717590027C7AF /* NSData+util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E3C346C91A66F4470027C7AF /* PBXTargetDependency */ = {
+		E3C346E41A6711DB0027C7AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E3C346BA1A66F4470027C7AF /* OSLogger */;
-			targetProxy = E3C346C81A66F4470027C7AF /* PBXContainerItemProxy */;
+			targetProxy = E3C346E31A6711DB0027C7AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -248,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -282,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -292,47 +413,46 @@
 		E3C346D01A66F4470027C7AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSLogger",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
 		};
 		E3C346D11A66F4470027C7AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSLogger",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Release;
 		};
-		E3C346D31A66F4470027C7AF /* Debug */ = {
+		E3C346E11A6711CD0027C7AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OSLoggerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		E3C346D41A66F4470027C7AF /* Release */ = {
+		E3C346E21A6711CD0027C7AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OSLoggerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -356,14 +476,16 @@
 				E3C346D11A66F4470027C7AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		E3C346D21A66F4470027C7AF /* Build configuration list for PBXNativeTarget "OSLoggerTests" */ = {
+		E3C346E01A6711CD0027C7AF /* Build configuration list for PBXAggregateTarget "Framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E3C346D31A66F4470027C7AF /* Debug */,
-				E3C346D41A66F4470027C7AF /* Release */,
+				E3C346E11A6711CD0027C7AF /* Debug */,
+				E3C346E21A6711CD0027C7AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
